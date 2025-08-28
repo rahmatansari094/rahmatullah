@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahmatullah - Professional Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #2d3748;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .resume-container {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: 
+                linear-gradient(120deg, rgba(78, 84, 200, 0.85) 0%, rgba(138, 100, 208, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover,
+                #4e54c8;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+            transform: rotate(30deg);
+        }
+        
+        .name {
+            font-size: 3rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .title {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            font-weight: 400;
+            position: relative;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+            position: relative;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        
+        /* LinkedIn Integration in Header */
+        .linkedin-integration {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .linkedin-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .linkedin-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Main Content */
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 35px;
+            padding: 40px;
+        }
+        
+        .left-column {
+            border-right: 1px solid #eaeaea;
+            padding-right: 35px;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            color: #4e54c8;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #8a64d0;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            background: #4e54c8;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        /* Experience & Education Styles */
+        .experience, .education {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .experience:hover, .education:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .exp-header, .edu-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .org-name {
+            font-weight: 600;
+            color: #4e54c8;
+            font-size: 1.1rem;
+        }
+        
+        .role {
+            font-weight: 500;
+            color: #5a67d8;
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+        
+        .date {
+            color: #718096;
+            font-style: italic;
+            background: #e9e8f7;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .location {
+            color: #718096;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.95rem;
+        }
+        
+        /* Skills Styles */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background: #f0f5ff;
+            border-radius: 8px;
+            border-left: 4px solid #4e54c8;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-list li:hover {
+            background: #e6edff;
+            transform: translateX(5px);
+        }
+        
+        .skill-list li i {
+            color: #4e54c8;
+        }
+        
+        /* Project Styles */
+        .project {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-left: 4px solid #8a64d0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .project-title {
+            font-weight: 600;
+            color: #4e54c8;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .left-column {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid #eaeaea;
+                padding-bottom: 30px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+            
+            .exp-header, .edu-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .linkedin-integration {
+                flex-direction: column;
+            }
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #e0e7ff;
+            color: #4e54c8;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin: 4px 4px 4px 0;
+            font-weight: 500;
+        }
+        
+        ul {
+            list-style-position: outside;
+            padding-left: 20px;
+        }
+        
+        ul li {
+            margin-bottom: 8px;
+        }
+        
+        .summary-text {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .linkedin-watermark {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            opacity: 0.7;
+            font-size: 2.5rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <h1 class="name">Rahmatullah</h1>
+            <p class="title">Assistant Professor | Cyber Security Specialist | ML Researcher</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Hyderabad, Telangana</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>rahmatali826@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91-9540743809</span>
+                </div>
+            </div>
+            
+            <div class="linkedin-integration">
+                <a href="https://www.linkedin.com/in/rahmatullah-17aa69124/" class="linkedin-link" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+            </div>
+            
+            <div class="linkedin-watermark">
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="left-column">
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-user"></i> Professional Summary</h2>
+                    <p class="summary-text">Dedicated and knowledgeable Assistant Professor with a Master's degree in Computer Science & Engineering specializing in Cyber Physical Systems. Over 1 year of experience in academia, delivering courses in core CS subjects. Possesses practical industry experience in cybersecurity vulnerability assessment and penetration testing. Seeking to contribute expertise in teaching, machine learning, and cybersecurity to a progressive academic institution.</p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+                    <div class="experience">
+                        <div class="exp-header">
+                            <div>
+                                <div class="role">Assistant Professor, Department of CSE</div>
+                                <div class="org-name">Marri Laxman Reddy Institute of Technology & Management</div>
+                            </div>
+                            <div class="date">Dec 2023 - Present</div>
+                        </div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Hyderabad, India</div>
+                        <ul>
+                            <li>Deliver lectures and develop course material for undergraduate Computer Science programs</li>
+                            <li>Guide students through practical sessions and academic projects</li>
+                            <li>Participate in departmental curriculum development and assessment activities</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience">
+                        <div class="exp-header">
+                            <div>
+                                <div class="role">Assistant Professor, Department of CSE</div>
+                                <div class="org-name">Ellenki College of Engineering & Technology</div>
+                            </div>
+                            <div class="date">Dec 2022 - Dec 2023</div>
+                        </div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Hyderabad, India</div>
+                        <ul>
+                            <li>Taught core computer science subjects to undergraduate students</li>
+                            <li>Mentored students on projects and provided academic support</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience">
+                        <div class="exp-header">
+                            <div>
+                                <div class="role">Cyber Security Analyst</div>
+                                <div class="org-name">Web Cluster Pvt. Ltd.</div>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Performed manual Vulnerability Assessment and Penetration Testing (VAPT) on web applications, mobile applications, APIs, and network infrastructure</li>
+                            <li>Utilized industry-standard tools including Burp Suite, Nikto, Acunetix, SQLmap, Nmap, Netsparker, and Metasploit to identify and report security vulnerabilities</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
+                    <div class="project">
+                        <div class="project-title"><i class="fas fa-brain"></i> Adversarial Attacks and Defences in Machine Learning</div>
+                        <p>Researched techniques to exploit and defend ML models against adversarial inputs, enhancing model robustness.</p>
+                        <div class="tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Security</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-title"><i class="fas fa-film"></i> Movie Recommendation System</div>
+                        <p>Built a collaborative filtering-based recommender system.</p>
+                        <div class="tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-title"><i class="fas fa-mobile-alt"></i> Image-Expo Android Application</div>
+                        <p>Developed a multi-feature image application using Java, XML, and Firebase for backend and authentication.</p>
+                        <div class="tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Android</span>
+                            <span class="tag">Firebase</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-column">
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education">
+                        <div class="edu-header">
+                            <div class="org-name">Vellore Institute of Technology</div>
+                            <div class="date">Aug 2022</div>
+                        </div>
+                        <div class="role">M.Tech in CSE, Cyber Physical Systems</div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> Chennai, India</div>
+                    </div>
+                    
+                    <div class="education">
+                        <div class="edu-header">
+                            <div class="org-name">Jamia Hamdard</div>
+                            <div class="date">May 2019</div>
+                        </div>
+                        <div class="role">B.Tech in Computer Science & Engineering</div>
+                        <div class="location"><i class="fas fa-map-marker-alt"></i> New Delhi, India</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-tools"></i> Technical Skills</h2>
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <ul class="skill-list">
+                            <li><i class="fab fa-python"></i> Python</li>
+                            <li><i class="fab fa-java"></i> Java</li>
+                            <li><i class="fas fa-code"></i> C / C++</li>
+                            <li><i class="fab fa-js-square"></i> JavaScript</li>
+                            <li><i class="fab fa-html5"></i> HTML / CSS</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Databases</h3>
+                        <ul class="skill-list">
+                            <li><i class="fas fa-database"></i> SQL, MySQL</li>
+                            <li><i class="fas fa-database"></i> Oracle</li>
+                            <li><i class="fas fa-database"></i> PostgreSQL</li>
+                            <li><i class="fas fa-database"></i> NoSQL (MongoDB, Neo4j)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Tools & Frameworks</h3>
+                        <ul class="skill-list">
+                            <li><i class="fas fa-toolbox"></i> Burp Suite</li>
+                            <li><i class="fas fa-toolbox"></i> Nmap, Metasploit</li>
+                            <li><i class="fas fa-toolbox"></i> Wireshark, SQLmap</li>
+                            <li><i class="fas fa-toolbox"></i> Firebase</li>
+                            <li><i class="fas fa-toolbox"></i> Android Studio</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-award"></i> National Conference on Science, Engineering and Technology (NCSET 2021)</li>
+                        <li><i class="fas fa-award"></i> Android App Development Training, IIHT Ltd.</li>
+                        <li><i class="fas fa-award"></i> Java Programming (6 weeks), Internshala</li>
+                        <li><i class="fas fa-award"></i> Workshop on Cloud Computing, Jamia Hamdard</li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-book"></i> Publications</h2>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-file-alt"></i> Integration of Renewable Sources of Energy into Smart grid</li>
+                        <li><i class="fas fa-file-alt"></i> A Review of Cyber Security in the Smart Grid: Survey and Challenges</li>
+                        <li><i class="fas fa-file-alt"></i> Adversarial Attacks and Defences in Machine Learning</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add subtle animations to elements when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.experience, .education, .project');
+            
+            animatedElements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            setTimeout(() => {
+                animatedElements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, 100 + index * 100);
+                });
+            }, 500);
+        });
+    </script>
+</body>
+</html>
